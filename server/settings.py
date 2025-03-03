@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'drf_yasg',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,9 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     'rest_framework',
     'account',
-    'drf_yasg',
+    'task',
+    
+    
     
 
 ]
