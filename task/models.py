@@ -19,3 +19,10 @@ class Actions(BaseModel):
 
     def __str__(self):
         return f"{self.heading} - {self.status}"
+    
+
+class Notifications(BaseModel):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE,related_name="user_notification")
+    action_id = models.ForeignKey(Actions,on_delete=models.CASCADE)
+    message = models.CharField(max_length=100)
+    is_read = models.BooleanField(default=False)
