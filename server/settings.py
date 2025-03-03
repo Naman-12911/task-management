@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'account',
     'task',
+    'corsheaders',# for the react allow cors policy
     
     
     
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware', # add middleware for the react
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # add middle ware for the react
 ]
 
 ROOT_URLCONF = 'server.urls'
@@ -206,3 +208,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
