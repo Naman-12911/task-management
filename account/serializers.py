@@ -98,3 +98,8 @@ class UserLoginSerializer(serializers.ModelSerializer):
             }
         else:
             raise AuthenticationFailed('Invalid authentication type')
+        
+class AllUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['email','first_name', 'last_name','id']
