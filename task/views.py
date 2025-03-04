@@ -70,7 +70,7 @@ class ActionsForUserAPIview(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         else:
-            data = Actions.objects.filter(user = request.assigned_to)  # Removed is_published filter
+            data = Actions.objects.filter(assigned_to=request.user)  # Removed is_published filter
             serializer = ActionsSerializers(data, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
